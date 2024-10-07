@@ -1,5 +1,91 @@
-*{
-color : black;
-background-color:orange;
-position: fixed;
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #1e3a5f;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 2em;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #294a7d;
+}
+
+nav a {
+    color: #fff;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #3f6bb5;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Styles */
+section {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+section:last-of-type {
+    border: none;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* List Styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #eef5fb;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-left: 3px solid #1e3a5f;
+    border-radius: 3px;
+}
+
+/* Links */
+a {
+    color: #1e3a5f;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
