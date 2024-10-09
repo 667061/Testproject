@@ -1,5 +1,4 @@
-window.addEventListener('DOMContentLoaded', () => {
-    // Smooth Scroll for Navigation Links
+document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {
         link.addEventListener('click', (event) => {
@@ -10,7 +9,6 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Scroll-to-Top Button
     const scrollTopBtn = document.createElement('button');
     scrollTopBtn.textContent = 'Top';
     scrollTopBtn.classList.add('scroll-top-btn');
@@ -28,7 +26,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Section Heading Animations
     const sections = document.querySelectorAll('section');
     const observerOptions = {
         threshold: 0.5,
@@ -44,5 +41,54 @@ window.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(section => {
         observer.observe(section);
+    });
+
+    // Light/Dark Mode Switch
+    const toggleButton = document.createElement('button');
+    toggleButton.textContent = 'Toggle Dark Mode';
+    toggleButton.classList.add('btn');
+    document.body.appendChild(toggleButton);
+
+    toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        toggleButton.classList.toggle('dark-mode');
+        scrollTopBtn.classList.toggle('dark-mode');
+        navLinks.forEach(link => {
+            link.classList.toggle('dark-mode');
+        });
+    });
+
+    // AJAX Content Loading Function
+    function loadContent(url, target) {
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector(target).innerHTML = data;
+            });
+    }
+
+    // Example usage: load additional projects
+    loadContent('additional-projects.html', '#projects');
+
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(contactForm);
+
+        fetch('contact.php', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.text())
+        .then(data => {
+            formStatus.textContent = data;
+            contactForm.reset();
+        })
+        .catch(error => {
+            formStatus.textContent = 'An error occurred. Please try again.';
+        });
     });
 });

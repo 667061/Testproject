@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 	<script src="script.js" defer></script>
+<link rel="manifest" href="manifest.json">
 </head>
 <body>
 
@@ -28,7 +29,14 @@
         <p>Hi, I'm Elias Brosvik, a recent graduate in computer engineering. I'm passionate about software development and looking to start my career in this field.</p>
     </section>
 
-    <section id="projects">
+   <section id="projects">
+        <h2>Projects</h2>
+        <div>
+            <p>This is where my projects will be loaded using AJAX.</p>
+        </div>
+    </section>
+
+ <!--   <section id="projects">
         <h2>Projects</h2>
         <ul>
             <li><strong>Project 1:</strong> Risk - Online multiplayer game based upon the boardgame of similar name. Created using the Spring framework</li>
@@ -36,7 +44,7 @@
             <li><strong>Project 3:</strong> Flight simulator - Three dimentional flight simulator implemented in MATLAB</li>
         </ul>
     </section>
-
+-->
     <section id="skills">
         <h2>Skills</h2>
         <ul>
@@ -58,12 +66,15 @@
         </ul>
     </section>
 
-    <section id="contact">
+     <section id="contact">
         <h2>Contact</h2>
-        <p>Please feel free to reach out to me at:</p>
-        <p>Email: <a href="mailto:elias.brosvik@hotmail.com">elias.brosvik@hotmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/eliasbrosvik" target="_blank">linkedin.com/in/eliasbrosvik</a></p>
-        <p>GitHub: <a href="https://github.com/667061" target="_blank">github.com/667061</a></p>
+        <form id="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div id="form-status"></div>
     </section>
 </div>
 
